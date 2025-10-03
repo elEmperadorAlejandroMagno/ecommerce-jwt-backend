@@ -1,7 +1,8 @@
 import express from 'express';
 import { getUserSession, createUserSession, renewUserSession } from '../controllers/userSessionController.js';
 import { authenticateUser } from '../middlewares/authMiddleware.js';
-import { CartController } from '../controllers/cartController.js';
+import cartController, { CartController } from '../controllers/cartController.js';
+import { getProducts, createProduct, getProductById, updateProduct, deleteProduct } from '../controllers/productController.js';
 
 const router = express.Router();
 
@@ -22,14 +23,16 @@ router.post('/renewUserSession', renewUserSession, (req, res) => {
 });
 
 // Product routes
-// router.get('/products', getProducts);
-// router.post('/products', createProduct);
-// router.post('/products', updateProduct);
-// router.delete('/products', deleteProduct);
+router.get('/products', getProducts);
+router.post('/products', createProduct);
+router.get('/products/:id', getProductById);
+router.put('/products/:id', updateProduct);
+router.delete('/products/:id', deleteProduct);
 
 // Cart routes (requieren autenticación)
-router.get('/cart', authenticateUser, CartController.getCart);
-router.post('/cart', authenticateUser, CartController.addToCart);
-router.delete('/cart/:itemId', authenticateUser, CartController.removeFromCart);
+router.get('/carts', CartController.getAllCarts)
+router.get('/cart', CartController.getCart);
+router.post('/cart', CartController.addToCart);
+router.delete('/cart/:itemId', CartController.removeFromCart);
 
 export default router;

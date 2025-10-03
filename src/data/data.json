@@ -1,0 +1,89 @@
+{
+  "carts": {
+    "<session ID 01>": {
+      "products": [
+        {
+          "productID": "id001",
+          "quantity": 2
+        },
+        {
+          "productID": "id002",
+          "quantity": 1
+        }
+      ],
+      "total": 350,
+      "timestamp": "hoy"
+    },
+    "<session ID 02>": {
+      "products": [
+        {
+          "productID": "id001",
+          "quantity": 1
+        },
+        {
+          "productID": "id003",
+          "quantity": 3
+        }
+      ],
+      "total": 560.8,
+      "timestamp": "hoy"
+    },
+    "<session ID 03>": {
+      "products": [
+        {
+          "productID": "id002"
+        }
+      ],
+      "total": 110,
+      "timestamp": "ayer"
+    }
+  },
+  "products": {
+    "id001": {
+      "name": "default name",
+      "description": "",
+      "price": 250.5,
+      "timestamp": "hoy"
+    },
+    "id002": {
+      "name": "default name",
+      "description": "",
+      "price": 100,
+      "timestamp": "ayer"
+    },
+    "id003": {
+      "name": "default name",
+      "description": "",
+      "price": 300.99,
+      "timestamp": "hoy"
+    },
+    "4c183c88-f3c7-4923-ab9a-0d5a02657cf0": {
+      "productID": "4c183c88-f3c7-4923-ab9a-0d5a02657cf0",
+      "name": "Producto con precio string",
+      "description": "Testing parseFloat",
+      "price": 123.45,
+      "timestamp": "2025-10-03T16:36:00.717Z"
+    },
+    "69af881d-13a7-492e-aaaf-758e43df8798": {
+      "productID": "69af881d-13a7-492e-aaaf-758e43df8798",
+      "name": "Producto mínimo",
+      "description": "",
+      "price": 50,
+      "timestamp": "2025-10-03T16:36:12.043Z"
+    },
+    "319890d8-fa11-46d6-a7e5-6a6b7e15a846": {
+      "productID": "319890d8-fa11-46d6-a7e5-6a6b7e15a846",
+      "name": "Producto Actualizado Completo",
+      "description": "Descripción completamente nueva después de actualización",
+      "price": 199.99,
+      "timestamp": "2025-10-03T16:39:21.126Z"
+    },
+    "26fe3284-7af8-4636-88b4-e75c8e202129": {
+      "productID": "26fe3284-7af8-4636-88b4-e75c8e202129",
+      "name": "MacBook Air M2",
+      "description": "Laptop ultradelgada con chip M2, 13 pulgadas, 256GB",
+      "price": 999,
+      "timestamp": "2025-10-03T16:37:52.896Z"
+    }
+  }
+}
