@@ -11,6 +11,8 @@ const routes = router;
 
 const PORT = process.env.PORT || 3000;
 
+app.disable('x-powered-by');
+
 // Middleware
 app.use(express.json());
 
