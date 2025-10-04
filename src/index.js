@@ -1,11 +1,13 @@
 import express from 'express';
 import router from './routes/routes.js';
 import dotenv from "dotenv";
+import cors from 'cors';
 
 const app = express();
 dotenv.config({ path: '.env.example'});
 
 export const JWT_SECRET = process.env.JWT_SECRET
+const allowedOrigins = process.env.ALLOWED_ORIGINS?.split(',') || [];
 
 const routes = router;
 
@@ -15,6 +17,29 @@ app.disable('x-powered-by');
 
 // Middleware
 app.use(express.json());
+
+// Middleware temporal para ver la IP de las peticiones
+// app.use((req, res, next) => {
+//   const clientIP = req.ip || 
+//                    req.connection.remoteAddress || 
+//                    req.socket.remoteAddress ||
+//                    req.headers['x-forwarded-for'];
+  
+//   console.log(`🔍 Petición desde IP: ${clientIP}`);
+//   console.log(`📍 Headers relevantes:`, {
+//     'x-forwarded-for': req.headers['x-forwarded-for'],
+//     'x-real-ip': req.headers['x-real-ip'],
+//     'user-agent': req.headers['user-agent']
+//   });
+//   next();
+// });
+
+app.use(cors({
+  origin: allowedOrigins,
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  credentials: true
+}))
 
 // Basic route
 app.get('/', (req, res) => {
