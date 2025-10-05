@@ -6,7 +6,8 @@ import cors from 'cors';
 const app = express();
 dotenv.config({ path: '.env.example'});
 
-export const JWT_SECRET = process.env.JWT_SECRET
+export const JWT_SECRET = process.env.JWT_SECRET;
+export const ADMIN_TOKEN = process.env.ADMIN_TOKEN;
 const allowedOrigins = process.env.ALLOWED_ORIGINS?.split(',') || [];
 
 const routes = router;

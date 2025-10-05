@@ -1,5 +1,5 @@
 import express from 'express';
-import { getUserSession, createUserSession, renewUserSession } from '../controllers/userSessionController.js';
+import { getUserSession, createUserSession, renewUserSession, getAllSessions } from '../controllers/userSessionController.js';
 import { authenticateUser } from '../middlewares/authMiddleware.js';
 import { CartController } from '../controllers/cartController.js';
 import { ProductController } from '../controllers/productController.js';
@@ -7,20 +7,15 @@ import { ProductController } from '../controllers/productController.js';
 const router = express.Router();
 
 // Home
-router.get('/', authenticateUser, (req, res) => {
+router.get('/', (req, res) => {
     res.json({ message: 'Welcome to the E-commerce JWT Backend API' });
 });
 
 // User routes
-router.get('/userSession', getUserSession, (req, res) => {
-    res.json({ message: 'User session retrieved successfully' });
-});
-router.post('/userSession', createUserSession, (req, res) => {
-    res.json({ message: 'User session created successfully' });
-});
-router.post('/renewUserSession', renewUserSession, (req, res) => {
-    res.json({ message: 'User session renewed successfully' });
-});
+router.get('/usersSessions', getAllSessions);
+router.post('/userSession', createUserSession);
+router.get('/userSession/:id', authenticateUser, getUserSession);
+router.post('/renewUserSession/:id', renewUserSession);
 
 // Product routes
 router.get('/products', ProductController.getProducts);

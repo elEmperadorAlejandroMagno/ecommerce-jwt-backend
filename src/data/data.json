@@ -1,85 +1,432 @@
 {
-  "carts": {
-    "<session ID 01>": {
-      "products": [
-        {
-          "productId": "id002",
-          "quantity": 1
-        },
-        {
-          "productId": "id001",
-          "quantity": 2
-        }
-      ],
-      "total": 501,
-      "timestamp": "2025-10-04T19:50:19.784Z"
-    },
-    "<session ID 02>": {
-      "products": [
-        {
-          "productId": "id003",
-          "quantity": 3
-        }
-      ],
-      "total": null,
-      "timestamp": "2025-10-04T19:07:51.762Z"
-    },
-    "<session ID 03>": {
-      "products": [
-        {
-          "productId": "id002"
-        }
-      ],
-      "total": 110,
-      "timestamp": "ayer"
-    }
-  },
+  "carts": {},
   "products": {
-    "id001": {
-      "name": "default name",
-      "description": "",
-      "price": 250.5,
-      "timestamp": "hoy"
-    },
-    "id002": {
-      "name": "default name",
-      "description": "",
-      "price": 100,
-      "timestamp": "ayer"
-    },
-    "id003": {
-      "name": "default name",
-      "description": "",
-      "price": 300.99,
-      "timestamp": "hoy"
-    },
-    "4c183c88-f3c7-4923-ab9a-0d5a02657cf0": {
-      "productId": "4c183c88-f3c7-4923-ab9a-0d5a02657cf0",
-      "name": "Producto con precio string",
-      "description": "Testing parseFloat",
-      "price": 123.45,
-      "timestamp": "2025-10-03T16:36:00.717Z"
-    },
-    "69af881d-13a7-492e-aaaf-758e43df8798": {
-      "productId": "69af881d-13a7-492e-aaaf-758e43df8798",
-      "name": "Producto mínimo",
-      "description": "",
-      "price": 50,
-      "timestamp": "2025-10-03T16:36:12.043Z"
-    },
-    "319890d8-fa11-46d6-a7e5-6a6b7e15a846": {
-      "productId": "319890d8-fa11-46d6-a7e5-6a6b7e15a846",
-      "name": "Producto Actualizado Completo",
-      "description": "Descripción completamente nueva después de actualización",
-      "price": 199.99,
-      "timestamp": "2025-10-03T16:39:21.126Z"
-    },
-    "26fe3284-7af8-4636-88b4-e75c8e202129": {
-      "productId": "26fe3284-7af8-4636-88b4-e75c8e202129",
+    "c9b71bdf-9105-4fd0-bbf0-7e8a8ae49e1f": {
+      "productID": "c9b71bdf-9105-4fd0-bbf0-7e8a8ae49e1f",
       "name": "MacBook Air M2",
-      "description": "Laptop ultradelgada con chip M2, 13 pulgadas, 256GB",
-      "price": 999,
-      "timestamp": "2025-10-03T16:37:52.896Z"
+      "description": "Laptop ultraligera con chip M2 de Apple, pantalla Liquid Retina de 13.6 pulgadas, 8GB RAM, 256GB SSD",
+      "price": 1199.99,
+      "type": "laptop"
+    },
+    "63420c84-5610-487f-8fbb-0af3f607acaa": {
+      "productID": "63420c84-5610-487f-8fbb-0af3f607acaa",
+      "name": "Dell XPS 13",
+      "description": "Laptop premium con procesador Intel Core i7, 16GB RAM, 512GB SSD, pantalla InfinityEdge 4K",
+      "price": 1299.99,
+      "type": "laptop"
+    },
+    "d8f5319e-5364-4fc7-9f05-8b8f931df38b": {
+      "productID": "d8f5319e-5364-4fc7-9f05-8b8f931df38b",
+      "name": "Lenovo ThinkPad X1 Carbon",
+      "description": "Laptop empresarial con Intel Core i5, 8GB RAM, 256GB SSD, certificación MIL-STD-810G",
+      "price": 1449.99,
+      "type": "laptop"
+    },
+    "9672d88b-4779-4f7c-b2f6-b3452766679e": {
+      "productID": "9672d88b-4779-4f7c-b2f6-b3452766679e",
+      "name": "iPhone 15 Pro",
+      "description": "Smartphone con chip A17 Pro, cámara triple de 48MP, pantalla Super Retina XDR de 6.1 pulgadas, 128GB",
+      "price": 999.99,
+      "type": "smartphone"
+    },
+    "fa37749e-2a16-41c7-a1bd-bea33331aa33": {
+      "productID": "fa37749e-2a16-41c7-a1bd-bea33331aa33",
+      "name": "Samsung Galaxy S24 Ultra",
+      "description": "Smartphone Android con S Pen, cámara de 200MP, pantalla Dynamic AMOLED 2X de 6.8 pulgadas, 256GB",
+      "price": 1199.99,
+      "type": "smartphone"
+    },
+    "7ff577b2-1364-414f-8ceb-500d2d3ffae3": {
+      "productID": "7ff577b2-1364-414f-8ceb-500d2d3ffae3",
+      "name": "Google Pixel 8",
+      "description": "Smartphone con Google Tensor G3, cámara computacional avanzada, 6.2 pulgadas, 128GB",
+      "price": 699.99,
+      "type": "smartphone"
+    },
+    "715102a1-7058-42ed-967e-6cb85c8fc3fb": {
+      "productID": "715102a1-7058-42ed-967e-6cb85c8fc3fb",
+      "name": "iPad Pro 11 pulgadas",
+      "description": "Tablet con chip M2, pantalla Liquid Retina de 11 pulgadas, compatible con Apple Pencil, 128GB WiFi",
+      "price": 799.99,
+      "type": "tablet"
+    },
+    "d804d348-eae2-4b4e-9f5a-0364fdd22464": {
+      "productID": "d804d348-eae2-4b4e-9f5a-0364fdd22464",
+      "name": "Samsung Galaxy Tab S9",
+      "description": "Tablet Android con S Pen incluido, pantalla AMOLED de 11 pulgadas, 128GB, resistente al agua",
+      "price": 649.99,
+      "type": "tablet"
+    },
+    "aea1da7e-6136-443b-a9e2-444316e65b55": {
+      "productID": "aea1da7e-6136-443b-a9e2-444316e65b55",
+      "name": "NVIDIA GeForce RTX 4070",
+      "description": "Tarjeta gráfica con arquitectura Ada Lovelace, 12GB GDDR6X, Ray Tracing de 3ra generación",
+      "price": 599.99,
+      "type": "gpu"
+    },
+    "ba946c00-4eb7-4a4a-9678-8b99c8fe508f": {
+      "productID": "ba946c00-4eb7-4a4a-9678-8b99c8fe508f",
+      "name": "AMD Ryzen 7 7700X",
+      "description": "Procesador de 8 núcleos, 16 hilos, frecuencia base 4.5GHz, socket AM5, arquitectura Zen 4",
+      "price": 329.99,
+      "type": "cpu"
+    },
+    "7df40c59-4fc4-44d7-81c8-542ac77b616b": {
+      "productID": "7df40c59-4fc4-44d7-81c8-542ac77b616b",
+      "name": "Corsair Vengeance LPX 32GB",
+      "description": "Memoria RAM DDR4-3200, kit de 2x16GB, baja latencia, disipador de aluminio",
+      "price": 149.99,
+      "type": "ram"
+    },
+    "48b14dc4-d5b1-49ea-bd85-43d23e9eea6b": {
+      "productID": "48b14dc4-d5b1-49ea-bd85-43d23e9eea6b",
+      "name": "Logitech MX Master 3S",
+      "description": "Mouse inalámbrico ergonómico, sensor 8K DPI, scroll magnético, batería de 70 días",
+      "price": 99.99,
+      "type": "mouse"
+    },
+    "c16d8e6b-9393-4811-af9f-3f10363b7412": {
+      "productID": "c16d8e6b-9393-4811-af9f-3f10363b7412",
+      "name": "Keychron K8 Pro",
+      "description": "Teclado mecánico inalámbrico 87 teclas, switches Gateron Pro, hotswap, layout en español",
+      "price": 149.99,
+      "type": "teclado"
+    },
+    "8b87426c-74d5-4951-a081-c95359ef9265": {
+      "productID": "8b87426c-74d5-4951-a081-c95359ef9265",
+      "name": "Sony WH-1000XM5",
+      "description": "Audífonos inalámbricos con cancelación de ruido adaptativa, 30h de batería, llamadas HD",
+      "price": 399.99,
+      "type": "audifonos"
+    },
+    "a3752f53-8991-46a4-8ab3-7aae6bef5a6f": {
+      "productID": "a3752f53-8991-46a4-8ab3-7aae6bef5a6f",
+      "name": "Samsung 980 PRO 1TB",
+      "description": "SSD NVMe M.2, velocidad de lectura hasta 7000 MB/s, interfaz PCIe 4.0",
+      "price": 179.99,
+      "type": "ssd"
+    },
+    "f2ecfa72-be88-46c9-a898-06aaed3a7b40": {
+      "productID": "f2ecfa72-be88-46c9-a898-06aaed3a7b40",
+      "name": "WD Black 2TB HDD",
+      "description": "Disco duro interno SATA 7200 RPM, optimizado para gaming, cache de 64MB",
+      "price": 89.99,
+      "type": "hdd"
+    },
+    "693351eb-c65e-4b8e-bc22-ed395d209ce4": {
+      "productID": "693351eb-c65e-4b8e-bc22-ed395d209ce4",
+      "name": "Camiseta Nike Dri-FIT",
+      "description": "Camiseta deportiva con tecnología Dri-FIT, tela transpirable, ajuste atlético, disponible en varios colores",
+      "price": 29.99,
+      "type": "camiseta"
+    },
+    "8ef22900-1331-4a7c-807b-f7b78657d941": {
+      "productID": "8ef22900-1331-4a7c-807b-f7b78657d941",
+      "name": "Camiseta básica Uniqlo",
+      "description": "Camiseta de algodón 100% orgánico, corte regular, perfecta para uso diario, tacto suave",
+      "price": 14.99,
+      "type": "camiseta"
+    },
+    "b670675a-0ff5-4ff8-893a-0e8de4fb2ea0": {
+      "productID": "b670675a-0ff5-4ff8-893a-0e8de4fb2ea0",
+      "name": "Polo Ralph Lauren",
+      "description": "Camisa polo clásica de algodón piqué, bordado del jinete, ajuste regular, elegante y casual",
+      "price": 89.99,
+      "type": "polo"
+    },
+    "28a1fa1e-eea3-4d75-9798-4b1b84ea5f26": {
+      "productID": "28a1fa1e-eea3-4d75-9798-4b1b84ea5f26",
+      "name": "Jeans Levi's 501",
+      "description": "Jeans clásicos de corte recto, 100% algodón, diseño atemporal, cintura media",
+      "price": 79.99,
+      "type": "jeans"
+    },
+    "69a3ae8b-5fb5-4c38-863d-a3d6273bdea9": {
+      "productID": "69a3ae8b-5fb5-4c38-863d-a3d6273bdea9",
+      "name": "Chinos Dockers Alpha",
+      "description": "Pantalones chinos ajustados, mezcla de algodón y elastano, perfectos para look smart-casual",
+      "price": 59.99,
+      "type": "pantalon"
+    },
+    "7e122dd9-de83-4453-a3d8-8b14e9cfc343": {
+      "productID": "7e122dd9-de83-4453-a3d8-8b14e9cfc343",
+      "name": "Joggers Adidas",
+      "description": "Pantalones deportivos con puños elásticos, tecnología Climalite, cómodos para entrenar",
+      "price": 49.99,
+      "type": "joggers"
+    },
+    "165558ba-9261-466a-a320-f1db8adc357d": {
+      "productID": "165558ba-9261-466a-a320-f1db8adc357d",
+      "name": "Nike Air Force 1",
+      "description": "Sneakers icónicos de cuero, suela de goma resistente, plantilla acolchada, estilo urbano clásico",
+      "price": 119.99,
+      "type": "zapatos"
+    },
+    "b48caca6-53a8-4c3d-a256-19f8ea08dbe4": {
+      "productID": "b48caca6-53a8-4c3d-a256-19f8ea08dbe4",
+      "name": "Adidas Stan Smith",
+      "description": "Tenis minimalistas de cuero blanco, detalles verdes, suela de goma, diseño atemporal",
+      "price": 89.99,
+      "type": "zapatos"
+    },
+    "29df93e0-b5e7-4adf-a870-8bc95f4f44ee": {
+      "productID": "29df93e0-b5e7-4adf-a870-8bc95f4f44ee",
+      "name": "Converse Chuck Taylor All Star",
+      "description": "Zapatillas de lona clásicas, suela de goma vulcanizada, estilo vintage, disponibles en múltiples colores",
+      "price": 64.99,
+      "type": "zapatos"
+    },
+    "c737f027-01e0-4c2e-b63b-f6827143bc20": {
+      "productID": "c737f027-01e0-4c2e-b63b-f6827143bc20",
+      "name": "Dr. Martens 1460",
+      "description": "Botas de cuero con cordones, suela AirWair resistente, plantilla acolchada, estilo rebelde",
+      "price": 179.99,
+      "type": "botas"
+    },
+    "24b806f5-673c-4206-b1bc-58fbec39ca9e": {
+      "productID": "24b806f5-673c-4206-b1bc-58fbec39ca9e",
+      "name": "Camisa Hugo Boss",
+      "description": "Camisa de vestir de algodón premium, corte slim fit, cuello clásico, perfecta para oficina",
+      "price": 149.99,
+      "type": "camisa"
+    },
+    "c698582c-a47e-4c1c-9ffb-9c8f420bd545": {
+      "productID": "c698582c-a47e-4c1c-9ffb-9c8f420bd545",
+      "name": "Traje Calvin Klein",
+      "description": "Traje de dos piezas, lana merino, corte moderno, ideal para eventos formales y negocios",
+      "price": 599.99,
+      "type": "traje"
+    },
+    "765a7ff5-02fa-4aaf-8a0d-60f32e6f851f": {
+      "productID": "765a7ff5-02fa-4aaf-8a0d-60f32e6f851f",
+      "name": "Corbata de seda italiana",
+      "description": "Corbata 100% seda, patrón clásico, fabricada en Italia, ancho tradicional de 8.5cm",
+      "price": 79.99,
+      "type": "corbata"
+    },
+    "4d4d0779-ccc3-4503-a6ce-d840c8a48b86": {
+      "productID": "4d4d0779-ccc3-4503-a6ce-d840c8a48b86",
+      "name": "Sudadera Champion",
+      "description": "Sudadera con capucha, mezcla algodón-poliéster, logo bordado, interior afelpado",
+      "price": 69.99,
+      "type": "sudadera"
+    },
+    "339bc0d3-6374-4e30-98ec-d4051a76df3a": {
+      "productID": "339bc0d3-6374-4e30-98ec-d4051a76df3a",
+      "name": "Shorts Under Armour",
+      "description": "Shorts deportivos con tecnología HeatGear, secado rápido, cintura elástica con cordón",
+      "price": 34.99,
+      "type": "shorts"
+    },
+    "07cdede5-4e7a-4250-b633-2b553fe298ea": {
+      "productID": "07cdede5-4e7a-4250-b633-2b553fe298ea",
+      "name": "Leggings Lululemon",
+      "description": "Mallas deportivas de alta compresión, tela Luon, cintura alta, perfectas para yoga y running",
+      "price": 118.99,
+      "type": "leggings"
+    },
+    "9f8476d9-d7ed-4756-ad5a-09c20396d0ea": {
+      "productID": "9f8476d9-d7ed-4756-ad5a-09c20396d0ea",
+      "name": "Gorra New Era 59FIFTY",
+      "description": "Gorra de béisbol ajustada, corona estructurada, visera plana, logo bordado en 3D",
+      "price": 39.99,
+      "type": "gorra"
+    },
+    "ff4fc060-4f5a-4f72-a90f-cff3b6d8c8a3": {
+      "productID": "ff4fc060-4f5a-4f72-a90f-cff3b6d8c8a3",
+      "name": "Cinturón de cuero Fossil",
+      "description": "Cinturón de cuero genuino, hebilla metálica, diseño reversible negro/marrón, estilo clásico",
+      "price": 49.99,
+      "type": "cinturon"
+    },
+    "c043a7ce-3136-4e2b-a1b7-2b42d73253a5": {
+      "productID": "c043a7ce-3136-4e2b-a1b7-2b42d73253a5",
+      "name": "Bufanda de lana",
+      "description": "Bufanda tejida 100% lana merino, suave y cálida, patrón de espiga, perfecta para invierno",
+      "price": 89.99,
+      "type": "bufanda"
+    },
+    "a01514eb-b335-460b-a3c8-091bab4f6546": {
+      "productID": "a01514eb-b335-460b-a3c8-091bab4f6546",
+      "name": "Pack Calvin Klein Underwear",
+      "description": "Set de 3 boxers de algodón elástico, cintura con logo, ajuste cómodo, colores básicos",
+      "price": 39.99,
+      "type": "ropa_interior"
+    },
+    "a6d4500b-8915-4839-a54c-4489e308751e": {
+      "productID": "a6d4500b-8915-4839-a54c-4489e308751e",
+      "name": "Calcetines Stance",
+      "description": "Calcetines de algodón peinado, diseños únicos, refuerzo en talón y punta, talla universal",
+      "price": 16.99,
+      "type": "calcetines"
+    },
+    "1899a349-1e7f-4383-b09c-b49275ba6ec8": {
+      "productID": "1899a349-1e7f-4383-b09c-b49275ba6ec8",
+      "name": "Sofá seccional IKEA KIVIK",
+      "description": "Sofá de esquina de 4 plazas, tapizado en tela Hillared, estructura de pino macizo, cojines extraíbles",
+      "price": 899.99,
+      "type": "sofa"
+    },
+    "43cb7e42-9b4b-4856-938e-300c837d7fb8": {
+      "productID": "43cb7e42-9b4b-4856-938e-300c837d7fb8",
+      "name": "Mesa de centro de roble",
+      "description": "Mesa de café de madera de roble macizo, acabado natural, diseño minimalista escandinavo, 120x60cm",
+      "price": 449.99,
+      "type": "mesa"
+    },
+    "fd047769-3384-4279-b3bb-0e020bd470b0": {
+      "productID": "fd047769-3384-4279-b3bb-0e020bd470b0",
+      "name": "Estantería Hemnes IKEA",
+      "description": "Librería de pino macizo con 5 estantes ajustables, acabado blanco, 90x197cm, perfecta para libros y decoración",
+      "price": 179.99,
+      "type": "estanteria"
+    },
+    "92860443-3585-427a-abcc-e52767b115c7": {
+      "productID": "92860443-3585-427a-abcc-e52767b115c7",
+      "name": "Cama Queen con cabecera acolchada",
+      "description": "Cama matrimonial con cabecera tapizada en tela gris, estructura de madera, diseño elegante y moderno",
+      "price": 699.99,
+      "type": "cama"
+    },
+    "6fa22f0a-489b-476a-bf28-661313b0faa6": {
+      "productID": "6fa22f0a-489b-476a-bf28-661313b0faa6",
+      "name": "Cómoda 6 cajones",
+      "description": "Cómoda de madera con 6 cajones amplios, manijas metálicas, perfecta para organizar ropa y accesorios",
+      "price": 329.99,
+      "type": "comoda"
+    },
+    "8024a6b8-2e2e-4a5a-a34f-a8c610d8cedd": {
+      "productID": "8024a6b8-2e2e-4a5a-a34f-a8c610d8cedd",
+      "name": "Espejo de pie con marco dorado",
+      "description": "Espejo de cuerpo entero 50x150cm, marco metálico dorado, base estable, ideal para dormitorio o vestidor",
+      "price": 149.99,
+      "type": "espejo"
+    },
+    "350bec36-8af6-4384-93aa-ea68fc8f3a53": {
+      "productID": "350bec36-8af6-4384-93aa-ea68fc8f3a53",
+      "name": "Refrigerador LG French Door",
+      "description": "Refrigerador de 28 pies cúbicos, tecnología inverter, dispensador de agua y hielo, eficiencia energética A+",
+      "price": 2199.99,
+      "type": "refrigerador"
+    },
+    "e23cba8f-beea-46d5-a9a0-f8f80629cb8c": {
+      "productID": "e23cba8f-beea-46d5-a9a0-f8f80629cb8c",
+      "name": "Microondas Samsung 1.2 cu ft",
+      "description": "Horno microondas de acero inoxidable, 1200W, plato giratorio de cerámica, 10 niveles de potencia",
+      "price": 159.99,
+      "type": "microondas"
+    },
+    "73e0eaba-2fce-45bf-9a01-fc70897ba79f": {
+      "productID": "73e0eaba-2fce-45bf-9a01-fc70897ba79f",
+      "name": "Cafetera Nespresso Vertuo",
+      "description": "Máquina de café con tecnología Centrifusion, compatible con cápsulas Vertuo, espuma cremosa automática",
+      "price": 199.99,
+      "type": "cafetera"
+    },
+    "6e7b5b2b-673c-43eb-8415-3e5d45cd14b5": {
+      "productID": "6e7b5b2b-673c-43eb-8415-3e5d45cd14b5",
+      "name": "Licuadora Vitamix A3500",
+      "description": "Licuadora de alta velocidad, motor de 2.2 HP, vaso Tritan de 64oz, controles táctiles, 5 programas preestablecidos",
+      "price": 529.99,
+      "type": "licuadora"
+    },
+    "bad90937-b76c-4c32-85f3-819dd5b9e80a": {
+      "productID": "bad90937-b76c-4c32-85f3-819dd5b9e80a",
+      "name": "Lámpara de pie moderna",
+      "description": "Lámpara de piso con trípode de madera, pantalla de tela beige, luz LED regulable, altura 150cm",
+      "price": 129.99,
+      "type": "lampara"
+    },
+    "ffeb10af-cd73-450a-bea6-a2527d90b104": {
+      "productID": "ffeb10af-cd73-450a-bea6-a2527d90b104",
+      "name": "Cuadro abstracto canvas",
+      "description": "Arte de pared impreso en canvas de alta calidad, marco flotante incluido, 80x60cm, colores neutros",
+      "price": 89.99,
+      "type": "cuadro"
+    },
+    "a9b9191a-6d32-483b-8b45-90e82f0c1cc7": {
+      "productID": "a9b9191a-6d32-483b-8b45-90e82f0c1cc7",
+      "name": "Alfombra persa vintage",
+      "description": "Alfombra de área 200x300cm, diseño persa tradicional, colores tierra, fibra sintética resistente",
+      "price": 299.99,
+      "type": "alfombra"
+    },
+    "0003596d-5e88-476c-8827-c4105c557b04": {
+      "productID": "0003596d-5e88-476c-8827-c4105c557b04",
+      "name": "Plantas artificiales set x3",
+      "description": "Set de 3 plantas artificiales realistas: monstera, ficus y eucalipto, macetas de cerámica incluidas",
+      "price": 79.99,
+      "type": "plantas"
+    },
+    "bfca750a-d8a7-4959-86e6-fa19ad1ece1b": {
+      "productID": "bfca750a-d8a7-4959-86e6-fa19ad1ece1b",
+      "name": "Juego de sábanas algodón egipcio",
+      "description": "Set completo Queen: sábana, fundas de almohada, algodón egipcio 400 hilos, suave y transpirable",
+      "price": 149.99,
+      "type": "sabanas"
+    },
+    "6306c271-23d9-42e3-aa92-c6350b9b4e5f": {
+      "productID": "6306c271-23d9-42e3-aa92-c6350b9b4e5f",
+      "name": "Edredón nórdico plumas de ganso",
+      "description": "Edredón Queen relleno 90% plumas de ganso, funda de algodón percal, cálido y ligero",
+      "price": 249.99,
+      "type": "edredon"
+    },
+    "8a6999eb-fc0c-4bd4-8eae-387444c51f6f": {
+      "productID": "8a6999eb-fc0c-4bd4-8eae-387444c51f6f",
+      "name": "Cojines decorativos set x4",
+      "description": "Set de 4 cojines 45x45cm, fundas de terciopelo en tonos neutros, relleno de fibra sintética",
+      "price": 59.99,
+      "type": "cojines"
+    },
+    "56c10466-637a-47af-b2c3-c737e6be574a": {
+      "productID": "56c10466-637a-47af-b2c3-c737e6be574a",
+      "name": "Organizador de closet modular",
+      "description": "Sistema de organización con estantes, barras y cajones, instalación sin herramientas, expandible",
+      "price": 199.99,
+      "type": "organizador"
+    },
+    "6a70f97d-8101-4b00-88ff-861e46062f57": {
+      "productID": "6a70f97d-8101-4b00-88ff-861e46062f57",
+      "name": "Canastas de mimbre set x3",
+      "description": "Set de 3 canastas tejidas en diferentes tamaños, con manijas, perfectas para almacenaje decorativo",
+      "price": 69.99,
+      "type": "canastas"
+    },
+    "b0050aa9-308b-4dc6-809e-ddfebcdb0e5e": {
+      "productID": "b0050aa9-308b-4dc6-809e-ddfebcdb0e5e",
+      "name": "Aspiradora robot Roomba i7+",
+      "description": "Aspiradora robótica con mapeo inteligente, auto-vaciado, compatible con Alexa y Google Assistant",
+      "price": 799.99,
+      "type": "aspiradora"
+    },
+    "9d036e74-0139-466e-9c26-0e5886c1cd78": {
+      "productID": "9d036e74-0139-466e-9c26-0e5886c1cd78",
+      "name": "Purificador de aire Dyson",
+      "description": "Purificador y ventilador 2 en 1, filtro HEPA, sensor de calidad de aire, control por app",
+      "price": 549.99,
+      "type": "purificador"
+    },
+    "860b94e8-8479-4fa1-a058-e46893e5d9a9": {
+      "productID": "860b94e8-8479-4fa1-a058-e46893e5d9a9",
+      "name": "Set de muebles de patio",
+      "description": "Conjunto de ratán sintético: mesa, 4 sillas y cojines resistentes al agua, ideal para exterior",
+      "price": 899.99,
+      "type": "muebles_exterior"
+    },
+    "adbc7d26-8d49-4be5-94ab-3ee2d6558f4e": {
+      "productID": "adbc7d26-8d49-4be5-94ab-3ee2d6558f4e",
+      "name": "Parrilla a gas Weber",
+      "description": "Parrilla de 3 quemadores, parrillas de hierro fundido, termómetro integrado, carrito con ruedas",
+      "price": 449.99,
+      "type": "parrilla"
+    },
+    "7b28aa5a-7f42-4520-9668-dc110bbfdfae": {
+      "productID": "7b28aa5a-7f42-4520-9668-dc110bbfdfae",
+      "name": "Macetas de cerámica set x5",
+      "description": "Set de macetas de diferentes tamaños con platillos, drenaje incluido, diseño moderno minimalista",
+      "price": 89.99,
+      "type": "macetas"
     }
   }
 }

@@ -38,24 +38,4 @@ export class Cart {
     return `Se ha removido una unidad de ${id} y el total se corrigió a $${this.total}`
   }
 }
-
-export class Product {
-  constructor(id, name, description="", price, quantity) {
-    this.productID = id;
-    this.name = name;
-    this.description = description;
-    this.price = price
-  }
-
-  updateProductName(newValue) {
-    this.name = newValue; 
-  }
-  updateProductPrice(newValue) {
-    this.price = newValue; 
-  }
-  updateProductDescription(newValue="") {
-    this.description += newValue;
-  }
-}
-
-export default { Cart, Product };
+export default Cart;
