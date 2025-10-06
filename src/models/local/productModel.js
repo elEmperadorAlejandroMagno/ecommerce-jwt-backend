@@ -1,6 +1,6 @@
 import { randomUUID as rUUID } from 'crypto';
 import { readJsonFile, writeJsonFile } from '../../utils/json_file_operations.js';
-import { Product } from '../../schema/product.js';
+import { Product } from '../../schema/class/product.js';
 
 const PATH = 'src/data/data.json';
 

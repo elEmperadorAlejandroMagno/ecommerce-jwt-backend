@@ -1,4 +1,4 @@
-import { Cart } from '../../schema/cart.js'
+import { Cart } from '../../schema/class/cart.js'
 import { readJsonFile, writeJsonFile } from '../../utils/json_file_operations.js';
 
 const PATH = 'src/data/data.json';
