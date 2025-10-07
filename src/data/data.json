@@ -427,6 +427,26 @@
       "description": "Set de macetas de diferentes tamaños con platillos, drenaje incluido, diseño moderno minimalista",
       "price": 89.99,
       "type": "macetas"
+    },
+    "0a706ae3-dd81-46f5-815f-93a4c47c90e5": {
+      "name": "Monitor 27 inch",
+      "price": 249.99,
+      "category": "Electronic",
+      "brand": "Acme",
+      "model": "U27",
+      "voltage": 110,
+      "productID": "0a706ae3-dd81-46f5-815f-93a4c47c90e5",
+      "timestamp": "2025-10-07T00:05:56.531Z"
+    },
+    "0a79468b-bff8-4edc-8a9c-ddd5b928c13c": {
+      "name": "Monitor 27 inch",
+      "price": 249.99,
+      "category": "Electronic",
+      "brand": "Acme",
+      "model": "U27",
+      "voltage": 110,
+      "productID": "0a79468b-bff8-4edc-8a9c-ddd5b928c13c",
+      "timestamp": "2025-10-07T00:06:19.433Z"
     }
   }
 }

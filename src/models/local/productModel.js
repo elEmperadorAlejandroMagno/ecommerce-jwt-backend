@@ -1,6 +1,5 @@
 import { randomUUID as rUUID } from 'crypto';
 import { readJsonFile, writeJsonFile } from '../../utils/json_file_operations.js';
-import { Product } from '../../schema/class/product.js';
 
 const PATH = 'src/data/data.json';
 
@@ -14,40 +13,25 @@ export class ProductModel {
     res.status(500).json({ message: 'Error fetching products', error: error.message });
     }
   }
-  static createProduct(req, res) {
+  // Crear con data ya validada por el controlador
+  static createProductWithData(res, data) {
     try {
-      const { name, description = '', price } = req.body;
-      
-      // Validar campos requeridos
-      if (!name || !price) {
-        return res.status(400).json({ 
-          message: 'Name and price are required fields' 
-        });
-      }
-      
       const productID = rUUID();
       const DATA = readJsonFile(PATH);
-      
-      // Asegurar que existe la sección products
-      if (!DATA.products) {
-        DATA.products = {};
-      }
-      
-      // Crear nuevo producto usando la clase Product
-      const newProduct = new Product(productID, name, description, parseFloat(price));
-      
-      // Agregar timestamp manualmente ya que no está en el constructor
-      newProduct.timestamp = new Date().toISOString();
-      
-      // Guardar en la estructura de datos
-      DATA.products[productID] = newProduct;
-      
-      // Guardar el archivo completo
+      if (!DATA.products) DATA.products = {};
+
+      const toSave = {
+        ...data,
+        productID,
+        timestamp: new Date().toISOString(),
+      };
+
+      DATA.products[productID] = toSave;
       writeJsonFile(PATH, DATA);
-      
-      res.status(201).json({ 
-        message: 'Product created successfully', 
-        product: DATA.products[productID] 
+
+      res.status(201).json({
+        message: 'Product created successfully',
+        product: toSave,
       });
     } catch (error) {
       res.status(500).json({ message: 'Error creating product', error: error.message });
@@ -68,51 +52,39 @@ export class ProductModel {
       res.status(500).json({ message: 'Error fetching product', error: error.message });
     }
   }
-  static updateProduct(req, res) {
+  // Buscar por id (para uso en el controlador)
+  static findById(productID) {
     try {
-      const productID = req.params.id;
-      const { name, description, price } = req.body;
-      
       const DATA = readJsonFile(PATH);
-      
+      return DATA.products?.[productID] || null;
+    } catch (_) {
+      return null;
+    }
+  }
+
+  // Actualizar con patch ya validado por el controlador
+  static updateProductWithPatch(res, productID, patch) {
+    try {
+      const DATA = readJsonFile(PATH);
       if (!DATA.products?.[productID]) {
         return res.status(404).json({ message: 'Product not found' });
       }
-      
-      // Obtener el producto existente
-      const existingProduct = DATA.products[productID];
-      
-      // Crear una nueva instancia de Product con los datos actuales
-      const updatedProduct = new Product(
-        existingProduct.productID || productID,
-        existingProduct.name,
-        existingProduct.description || '',
-        existingProduct.price
-      );
-      
-      // Usar los métodos de la clase para actualizar
-      if (name) {
-        updatedProduct.updateProductName(name);
-      }
-      if (description !== undefined) {
-        // Para description usamos asignación directa ya que el método hace += 
-        updatedProduct.updateProductDescription(description);
-      }
-      if (price) {
-        updatedProduct.updateProductPrice(parseFloat(price));
-      }
-      
-      // Mantener timestamp actualizado
-      updatedProduct.timestamp = new Date().toISOString();
-      
-      // Guardar el producto actualizado
-      DATA.products[productID] = updatedProduct;
-      
+
+      const existing = DATA.products[productID];
+      const merged = {
+        ...existing,
+        ...patch,
+        timestamp: new Date().toISOString(),
+        productID: existing.productID, // preserva
+        category: existing.category,   // no se cambia por patch
+      };
+
+      DATA.products[productID] = merged;
       writeJsonFile(PATH, DATA);
-      
-      res.status(200).json({ 
-        message: 'Product updated successfully', 
-        product: DATA.products[productID] 
+
+      res.status(200).json({
+        message: 'Product updated successfully',
+        product: merged,
       });
     } catch (error) {
       res.status(500).json({ message: 'Error updating product', error: error.message });
